@@ -7,6 +7,12 @@
  */
 function sumValues(num1, num2, add) {
     if (add) {
+
+        // check if inputs are numbers, otherwise return false
+        if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+            return false;
+        }
+
         let result = 0; // change const to let
 
         result = num1 + num2;
