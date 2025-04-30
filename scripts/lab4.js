@@ -30,7 +30,7 @@ function discountPrices(prices, discount) {
     let discountedPrice = 0
 
     // add empty array functionality
-    if (length == 0) {
+    if (length == 0 || !Array.isArray(prices)) {
         return false;
     }
 
