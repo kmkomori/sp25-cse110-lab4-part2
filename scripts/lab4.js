@@ -7,14 +7,20 @@
  */
 function sumValues(num1, num2, add) {
     if (add) {
-        const result = 0;
+
+        // check if inputs are numbers, otherwise return false
+        if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+            return false;
+        }
+
+        let result = 0; // change const to let
 
         result = num1 + num2;
 
         return result;
     }
     else {
-        return !add;
+        return add; // change !add (true) to add (false)
     }
 }
 
@@ -28,8 +34,14 @@ function discountPrices(prices, discount) {
     const discounted = []
     const length = prices.length;
     let discountedPrice = 0
+
+    // add empty array functionality
+    if (length == 0 || !Array.isArray(prices)) {
+        return false;
+    }
+
     for(let i = 0; i < length; i++) {
-        discountedPrice += prices[i] * (1 - discount);
+        discountedPrice = prices[i] * (1 - discount); // change += to =
         discounted.push(discountedPrice);
     }
 
